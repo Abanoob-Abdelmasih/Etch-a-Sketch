@@ -43,8 +43,12 @@ function layoutMaker(size = 16) {
 // /////////////////////////////////////////////////////////////////////////
 
 customInput.addEventListener('click', () => {
-  const sketchSize = prompt('Enter the desired size (max: 100)', '16');
-  layoutMaker(sketchSize);
+  const sketchSize = prompt('Enter the desired size (min: 2 - max: 100)', '16');
+  if (sketchSize >= 2 && sketchSize <= 100) {
+    layoutMaker(sketchSize);
+  } else {
+    alert('Invalid value');
+  }
 });
 
 // /////////////////////////////////////////////////////////////////////////
