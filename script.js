@@ -25,22 +25,20 @@ function layoutMaker(size = 16) {
     div.classList.add('gridItem');
     container.appendChild(div);
   }
-}
 
-// /////////////////////////////////////////////////////////////////////////
-
-function changeColor(e) {
-  if (e.target.classList.contains('gridItem')) {
-    e.target.classList.add('hovered');
-    console.log(e.target);
+  function changeColor(e) {
+    if (e.target.classList.contains('gridItem')) {
+      e.target.classList.add('hovered');
+      console.log(e.target);
+    }
   }
+
+  const divs = document.querySelectorAll('div');
+
+  divs.forEach((div) => {
+    div.addEventListener('mouseenter', changeColor);
+  });
 }
-
-const divs = document.querySelectorAll('div');
-
-divs.forEach((div) => {
-  div.addEventListener('click', changeColor);
-});
 
 // /////////////////////////////////////////////////////////////////////////
 
