@@ -3,10 +3,28 @@
 const container = document.querySelector('.container');
 const customInput = document.querySelector('.custom-size-input');
 
-for (let i = 0; i < 256; i++) {
-  const div = document.createElement('div');
-  div.classList.add('gridItem');
-  container.appendChild(div);
+// window.addEventListener('load', layoutMaker);
+
+// /////////////////////////////////////////////////////////////////////////
+
+function removeAllChildNodes(parent) {
+  while (parent.firstChild) {
+    parent.removeChild(parent.firstChild);
+  }
+}
+
+function layoutMaker(size = 16) {
+  removeAllChildNodes(container);
+  container.setAttribute(
+    'style',
+    `grid-template-rows: repeat(${size}, 1fr); grid-template-columns: repeat(${size}, 1fr);`
+  );
+  const n = size * size;
+  for (let i = 0; i < n; i++) {
+    const div = document.createElement('div');
+    div.classList.add('gridItem');
+    container.appendChild(div);
+  }
 }
 
 // /////////////////////////////////////////////////////////////////////////
@@ -26,5 +44,10 @@ divs.forEach((div) => {
 // /////////////////////////////////////////////////////////////////////////
 
 customInput.addEventListener('click', () => {
-  prompt('Enter the desired size (max: 100)', '16');
+  const sketchSize = prompt('Enter the desired size (max: 100)', '16');
+  layoutMaker(sketchSize);
 });
+
+// /////////////////////////////////////////////////////////////////////////
+
+layoutMaker();
