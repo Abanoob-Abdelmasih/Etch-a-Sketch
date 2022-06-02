@@ -32,13 +32,14 @@ function layoutMaker(size = 16) {
 function changeColor(e) {
   if (e.target.classList.contains('gridItem')) {
     e.target.classList.add('hovered');
+    console.log(e.target);
   }
 }
 
 const divs = document.querySelectorAll('div');
 
 divs.forEach((div) => {
-  div.addEventListener('mouseenter', changeColor);
+  div.addEventListener('click', changeColor);
 });
 
 // /////////////////////////////////////////////////////////////////////////
