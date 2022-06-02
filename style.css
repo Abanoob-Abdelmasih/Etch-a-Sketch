@@ -1,8 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&family=Poppins:ital,wght@0,100;0,400;0,600;0,700;1,200&display=swap');
-
-:root {
-}
-
 *,
 *::after,
 *::before {
@@ -13,52 +8,12 @@
   outline: none;
 }
 
-ul {
-  list-style: none;
-}
-
-a {
-  text-decoration: none;
-}
-
-img {
-  max-width: 100%;
-  display: block;
-}
-
-/* Reusable classes */
-.page-container {
-  max-width: 160rem;
-  margin: 0 auto;
-  padding: 0 1.5rem;
-}
-
-.place-items-center {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.d-grid {
-  display: grid;
-}
-
-.d-flex {
-  display: flex;
-}
-
 html {
-  /* font-size: 10px; */
-  /* 10px / 16px = 0.625 = 62.5% */
-  /* Percentage of user's browser font-size setting */
   font-size: 62.5%;
 }
 
 body {
   min-height: 100%;
-  text-rendering: optimizeSpeed;
-  line-height: 1.5;
-  /* for media query overflow-x: hidden; */
 }
 
 .container {
@@ -73,4 +28,8 @@ body {
 .container > div {
   border-bottom: 1px solid black;
   border-right: 1px solid black;
+}
+
+.hovered {
+  background-color: red;
 }
